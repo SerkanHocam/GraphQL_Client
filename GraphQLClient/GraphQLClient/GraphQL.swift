@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GraphQL: NSObject {
+public class GraphQL: NSObject {
     
     var baseUrl: URL
     var authorization: [String: String]? = nil
