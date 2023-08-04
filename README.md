@@ -1,6 +1,9 @@
 
 # GraphQL Client
 
+[![License](https://img.shields.io/cocoapods/l/LFTwitterProfile.svg?style=flat)](http://cocoapods.org/pods/LFTwitterProfile)
+[![Platform](https://img.shields.io/cocoapods/p/LFTwitterProfile.svg?style=flat)](http://cocoapods.org/pods/LFTwitterProfile)
+
 It is a open source framework to connect servers supporting GraphQL for IOS.
 
 ## Usage:
