@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
-  s.name         = "SwipePlayer"
+  s.name         = "GraphQLClient"
   s.version      = "1.0.0"
-  s.summary      = "This framework provide a player view seems youtube player."
+  s.summary      = "This framework provide to connect a server supporting GraphQL and fetch data formated JSON."
 
   s.homepage     = "https://serkanhocam.com/"
   s.license      = "Serkan Kayaduman"
