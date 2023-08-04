@@ -21,15 +21,17 @@ public class GraphQL: NSObject {
     }
     
     private func readFile(fileName:String) -> String? {
-        let bundle = Bundle(for: GraphQL.self)
-        
         if fileName.contains(".") {
             let fileArray = fileName.split(separator: ".")
             if  fileArray.count > 0, let ext = fileArray.last {
                 
                 let name = String(fileName.prefix(fileName.count - ext.count - 1))
                 
-                if let path = bundle.path(forResource: name, ofType: String(ext)) {
+                if let path = Bundle.main.path(forResource: name, ofType: String(ext)) {
+                    let text = try? String(contentsOf: URL(fileURLWithPath: path))
+                    return text
+                }
+                if let path = Bundle(for: GraphQL.self).path(forResource: name, ofType: String(ext)) {
                     let text = try? String(contentsOf: URL(fileURLWithPath: path))
                     return text
                 }
