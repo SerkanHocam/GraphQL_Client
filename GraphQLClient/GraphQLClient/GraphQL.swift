@@ -14,7 +14,7 @@ public class GraphQL: NSObject {
     var authorization: [String: String]? = nil
     var timeout: TimeInterval = 20
     
-    init(baseUrl: URL, authorization: [String: String]? = nil) {
+    public init(baseUrl: URL, authorization: [String: String]? = nil) {
         self.baseUrl = baseUrl
         self.authorization = authorization
         super.init()
@@ -68,7 +68,7 @@ public class GraphQL: NSObject {
         return request
     }
     
-    func fetchData(queryFileName:String, parameters:[String:Any]?, result:((Data?, String?)->Void)?) {
+    public func fetchData(queryFileName:String, parameters:[String:Any]?, result:((Data?, String?)->Void)?) {
         do {
             if let request = try self.prepareRequest(queryFileName: queryFileName, parameters: parameters) {
                 self.fetching(request: request) { [weak self] data, error in
@@ -82,7 +82,7 @@ public class GraphQL: NSObject {
         }
     }
     
-    func fetchJson(queryFileName:String, parameters:[String:Any]?, result:((Any?, String?)->Void)?) {
+    public func fetchJson(queryFileName:String, parameters:[String:Any]?, result:((Any?, String?)->Void)?) {
         self.fetchData(queryFileName: queryFileName, parameters: parameters) {data, error in
             if let e = error {
                 result?(nil, e)
